@@ -37,7 +37,7 @@ const AppBar = styled(MuiAppBar, {
     }),
 }));
 
-const Header = ({ toggleDrawer, open, drawerWidth }: IHeaderProps): JSX.Element => {
+const Header = ({ toggleDrawer, open, drawerWidth, showDrawer }: IHeaderProps): JSX.Element => {
     const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
 
     const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -59,7 +59,7 @@ const Header = ({ toggleDrawer, open, drawerWidth }: IHeaderProps): JSX.Element 
                         pr: '24px'
                     }}
                 >
-                    <IconButton
+                    {showDrawer && <IconButton
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
@@ -70,7 +70,7 @@ const Header = ({ toggleDrawer, open, drawerWidth }: IHeaderProps): JSX.Element 
                         }}
                     >
                         <MenuIcon />
-                    </IconButton>
+                    </IconButton>}
                     <Typography
                         component="h1"
                         variant="h6"

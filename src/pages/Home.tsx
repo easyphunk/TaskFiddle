@@ -1,10 +1,6 @@
-import Layout from '../components/Layout/Layout';
-
-const Home = () => {
+const Home = (): JSX.Element => {
     return (
-        <Layout showDrawer={true}>
-
-        </Layout>
+        <></>
     );
 };
 

@@ -1,5 +1,6 @@
 export interface IDrawerProps {
     toggleDrawer: () => void,
     open: boolean,
-    drawerWidth: number
+    drawerWidth: number,
+    children: React.ReactNode
 }

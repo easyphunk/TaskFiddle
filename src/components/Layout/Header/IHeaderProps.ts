@@ -1,5 +1,6 @@
 export interface IHeaderProps {
     toggleDrawer: () => void,
     open: boolean,
-    drawerWidth: number
+    drawerWidth: number,
+    showDrawer: boolean | undefined
 };

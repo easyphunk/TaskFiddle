@@ -40,7 +40,7 @@ const DrawerStyled = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== '
         }),
     );
 
-const Drawer = ({ toggleDrawer, open, drawerWidth }: IDrawerProps) => {
+const Drawer = ({ toggleDrawer, open, drawerWidth, children }: IDrawerProps) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <DrawerStyled variant="permanent" open={open} drawerWidth={drawerWidth}>
@@ -63,6 +63,9 @@ const Drawer = ({ toggleDrawer, open, drawerWidth }: IDrawerProps) => {
                     <DrawerItems />
                 </List>
             </DrawerStyled>
+            <Box sx={{ m: '4.5rem 1rem', overflowX: 'auto'}}>
+                {children}
+            </Box>
         </Box>
     );
 }
