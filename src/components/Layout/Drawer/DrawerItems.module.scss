@@ -1,0 +1,11 @@
+.drawerLink,
+.drawerLinkActive {
+    color: inherit;
+    text-decoration: none;
+}
+
+.drawerLinkActive {
+    > div[class*="MuiButtonBase-root"] {
+        background-color: #e2e2e2;
+    }
+}

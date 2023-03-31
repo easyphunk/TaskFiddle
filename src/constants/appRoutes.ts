@@ -20,6 +20,10 @@ const AppRoutes = {
     createProject: {
         pattern: '/create-project'
     },
+    profile: {
+        pattern: '/profile/:id',
+        getPath: (id: string): string => `/profile/${id}`
+    }
 }
 
 export default AppRoutes;

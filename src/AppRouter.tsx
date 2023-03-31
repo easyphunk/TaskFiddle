@@ -9,6 +9,7 @@ import ProjectSettings from "./pages/ProjectSettings";
 import AllProjects from "./pages/AllProjects";
 import CreateProject from "./pages/CreateProject";
 import Layout from "./components/Layout/Layout";
+import ErrorPage from "./pages/Error";
 
 const AppRouter = (): JSX.Element => {
     return (
@@ -41,10 +42,13 @@ const AppRouter = (): JSX.Element => {
                             path={AppRoutes.createProject.pattern}
                             element={<CreateProject />}
                         />
+                        <Route
+                            path='*'
+                            element={<ErrorPage />}
+                        />
                     </Routes>
                 </Layout>
             </BrowserRouter>
-
         </>
     )
 }

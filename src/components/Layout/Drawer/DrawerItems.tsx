@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -8,60 +8,82 @@ import PeopleIcon from '@mui/icons-material/People';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SourceIcon from '@mui/icons-material/Source';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
 import AppRoutes from '../../../constants/appRoutes';
+
+import styles from './DrawerItems.module.scss';
 
 const DrawerItems = (): JSX.Element => {
     return (
         <>
-            {/* TODO: get id for board from state and update Link paths*/}
-            <Link to={AppRoutes.board.getPath('1')} >
+            {/* TODO: get id for board from state and update NavLink paths*/}
+            <NavLink
+                className={({ isActive }) => isActive ? styles.drawerLinkActive : styles.drawerLink}
+                to={AppRoutes.board.getPath('1')}
+            >
                 <ListItemButton>
                     <ListItemIcon>
                         <DashboardIcon />
                     </ListItemIcon>
                     <ListItemText primary="Board" />
                 </ListItemButton>
-            </Link>
+            </NavLink>
 
-            <Link to={AppRoutes.members.getPath('1')}>
+            <NavLink
+                className={({ isActive }) => isActive ? styles.drawerLinkActive : styles.drawerLink}
+
+                to={AppRoutes.members.getPath('1')}
+            >
                 <ListItemButton>
                     <ListItemIcon>
                         <PeopleIcon />
                     </ListItemIcon>
                     <ListItemText primary="Members" />
                 </ListItemButton>
-            </Link>
+            </NavLink>
 
-            <Link to={AppRoutes.projectSettings.getPath('1')}>
+            <NavLink
+                className={({ isActive }) => isActive ? styles.drawerLinkActive : styles.drawerLink}
+
+                to={AppRoutes.projectSettings.getPath('1')}
+            >
                 <ListItemButton>
                     <ListItemIcon>
                         <SettingsIcon />
                     </ListItemIcon>
                     <ListItemText primary="Project Settings" />
                 </ListItemButton>
-            </Link>
+            </NavLink>
 
             <Divider sx={{ my: 1 }} />
 
-            <Link to={AppRoutes.allProjects.pattern}>
+            <NavLink
+                className={({ isActive }) => isActive ? styles.drawerLinkActive : styles.drawerLink}
+
+                to={AppRoutes.allProjects.pattern}
+            >
                 <ListItemButton>
                     <ListItemIcon>
                         <SourceIcon />
                     </ListItemIcon>
                     <ListItemText primary="All Projects" />
                 </ListItemButton>
-            </Link>
+            </NavLink>
 
             <Divider sx={{ my: 1 }} />
 
-            <Link to={AppRoutes.createProject.pattern}>
+            <NavLink
+                className={({ isActive }) => isActive ? styles.drawerLinkActive : styles.drawerLink}
+
+                to={AppRoutes.createProject.pattern}
+            >
                 <ListItemButton>
                     <ListItemIcon>
                         <AddCircleOutlineIcon />
                     </ListItemIcon>
                     <ListItemText primary="Create Project" />
                 </ListItemButton>
-            </Link>
+            </NavLink>
         </>
     );
 }
